@@ -1,0 +1,42 @@
+Arsenal
+Aston Villa
+Barnsley
+Blackpool
+Bolton Wanderers
+Bournemouth
+Bradford_City
+Brentford
+Brighton and Hove Albion
+Burnley
+Burton Albion
+Cardiff City
+Chelsea
+Crystal Palace
+Doncaster Rovers
+Everton
+Exeter City
+Fulham
+Huddersfield Town
+Leeds United
+Leyton Orient
+Lincoln City
+Liverpool
+Manchester City
+Manchester United
+Mansfield Town
+Newcastle United
+Northampton Town
+Nottingham Forest
+Peterborough United
+Plymouth Argyle
+Port Vale
+Portsmouth
+Queens Park Rangers
+Reading
+Stevenage
+Sunderland
+Tottenham Hotspur
+West Ham United
+Wigan Athletic
+Wolverhampton Wanderers
+Wycombe Wanderers
