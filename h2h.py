@@ -16,8 +16,8 @@ def get_team_id(team_name):
     try:
         response = requests.get(url)
         if response.status_code == 429:
-            print(f"  [!] Rate limit hit (ID lookup). Sleeping 30s...")
-            time.sleep(30)
+            print(f"  [!] Rate limit hit (ID lookup). Sleeping 60s...")
+            time.sleep(60)
             return None
         data = response.json()
         if data.get('teams'):
@@ -30,8 +30,8 @@ def fetch_h2h_iteration(t1, t2, season):
     try:
         response = requests.get(url)
         if response.status_code == 429:
-            print(f"  [!] ERROR 429: Throttled. Pausing for 30s...")
-            time.sleep(30)
+            print(f"  [!] ERROR 429: Throttled. Pausing for 60s...")
+            time.sleep(60)
             return None
         return response.json().get('event')
     except: return None
@@ -81,7 +81,7 @@ def get_form_list(team_id, team_name):
         response = requests.get(url)
         if response.status_code == 429:
             print(f"  [!] ERROR 429: Throttled (Form). Sleeping...")
-            time.sleep(30)
+            time.sleep(60)
             return [""] * 5
             
         events = response.json().get('results')
@@ -137,11 +137,15 @@ def run_analysis():
 
             # 2. Form Processing
             for t_name in [t1, t2]:
+                print(f'[+] Team Form for: [{t_name}]')
                 if t_name not in form_results:
                     tid = get_team_id(t_name)
                     f_list = get_form_list(tid, t_name)
+                    print(f'[+] Form for {t_name}: {f_list}')
                     # Game 1 (Latest) on right
                     form_results[t_name] = [t_name, f_list[4], f_list[3], f_list[2], f_list[1], f_list[0]]
+                else:
+                    print(f'[-] Team {t_name} found: {form_results[t_name]}')
             
             time.sleep(0.5)
 
