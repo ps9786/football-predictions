@@ -126,6 +126,7 @@ def run_analysis():
     with open(INPUT_FILE, 'r') as f:
         reader = csv.DictReader(f)
         for row in reader:
+            print(f'[+] {row}')
             if not row.get('Team1') or not row.get('Team2'): continue
             t1, t2 = row['Team1'].strip(), row['Team2'].strip()
             
